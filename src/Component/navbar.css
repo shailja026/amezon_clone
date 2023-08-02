@@ -1,0 +1,45 @@
+.navbar{
+   
+    
+    display: flex;
+    background-color: #131921;
+    color: white;
+    height: 8vh;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 10%;
+}
+.logo img{
+
+    width: 95%;
+    margin-top: 0.5rem;
+}
+.location{
+    display: flex;
+}
+.seachBar{
+    display: flex;
+    width: 50%;
+    /* border: 5px solid red; */
+    background-color: aliceblue;
+    height: 65%;
+}
+.right{
+    display: flex;
+}
+.seachBar input{
+    width: 80%;
+}
+.seachBar div{
+    margin-right: 0;
+    width: 10%;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    height: 95%;
+    background-color: #febd69;
+    background-image: none;
+    border: none;
+    width: 45px;
+}
