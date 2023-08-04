@@ -1,45 +1,152 @@
-.navbar{
-   
-    
-    display: flex;
-    background-color: #131921;
-    color: white;
-    height: 8vh;
-    align-items: center;
-    justify-content: space-between;
+.navbar {
+  position: sticky !important;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: #131921;
+  /* background-color: red; */
+  color: white;
+  height: 10vh;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  
+  z-index: 10;
+  
 }
-.logo{
-    width: 10%;
+.logo {
+/* border: 5px solid gray; */
+  display: flex;
+  width: 10%;
+  align-items: center;
 }
-.logo img{
-
-    width: 95%;
-    margin-top: 0.5rem;
+.logoImage{
+  width: 80%;
+  height: 60%;
+  margin-left: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-radius: 15px;
 }
 .location{
-    display: flex;
+  display: flex;
+ 
+  justify-content: center;
+  align-items: center;
+  width: 10%;
 }
-.seachBar{
-    display: flex;
-    width: 50%;
-    /* border: 5px solid red; */
-    background-color: aliceblue;
-    height: 65%;
+.location svg{
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-right: 0.5rem;
 }
-.right{
-    display: flex;
+.seachBar {
+  display: flex;
+  width: 50%;
+
+  background-color: aliceblue;
+  height: 68%;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.seachBar input{
-    width: 80%;
+.seachBar select {
+  height: 100%;
+  border: none;
+  background-color: rgb(228, 228, 226);
 }
-.seachBar div{
-    margin-right: 0;
-    width: 10%;
-    color: rgb(0, 0, 0);
-    align-items: center;
-    height: 95%;
-    background-color: #febd69;
-    background-image: none;
-    border: none;
-    width: 45px;
+
+.right {
+  display: flex;
+  align-items: center;
+  
+}
+
+.seachBar input {
+  width: 85%;
+  height: 100%;
+  border: none;
+}
+.seachBar div {
+  margin-right: 0;
+  width: 5%;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  height: 100%;
+  background-color: #f89d27;
+  background-image: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 900;
+
+  margin-left: 2.7rem;
+  z-index: 0;
+}
+.seachBar div svg {
+  text-align: center;
+  margin: 0.5rem;
+  font-weight: 900;
+}
+.language {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+.right {
+  display: flex;
+}
+.language img {
+  width: 30%;
+  height: 30%;
+  margin-right: 0.8rem;
+}
+.SignIn {
+  display: flex;
+
+  width: 40%;
+  flex-direction: column;
+  font-size: 1.2rem;
+  margin: 0rem;
+  font-weight: 500;
+  margin-right: 2rem;
+}
+.SignIn p {
+  margin-top: 0;
+}
+.return {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 10%;
+  position: absolute;
+  right: 3.5rem;
+  top: 2rem;
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  font-weight: 500;
+}
+.cart{
+  width: 5%;
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.cart p{
+  position: relative;
+  top: 20px;
+  left: 3px;
+}
+.cart svg {
+ 
+
+  /* margin-top: -1rem; */
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+
 }

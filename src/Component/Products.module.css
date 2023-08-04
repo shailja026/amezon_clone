@@ -1,0 +1,97 @@
+
+.mainContainer{
+    display: flex;
+    margin: 1.5rem;
+}
+.products{
+/* border: 2px solid red; */
+z-index: 100;
+background-color: rgb(255, 255, 255);
+width: 30%;
+margin: 1rem;
+
+text-align: left;
+box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+}
+.products h1{
+    font-size: 2rem;
+  font-family:sans-serif;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.card{
+    display: grid;
+    grid-template-columns: auto auto;
+    /* margin-left: rem; */
+    align-items: center;
+    
+    
+}
+/* .card img{
+  
+} */
+.products h1{
+    margin-left: 1rem;
+}
+.products button{
+    border: none;
+    text-align: left;
+    margin: 1rem;
+    color: red;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+.item{
+    /* box-shadow: 1px 3px 2px rgb(0 0 0 / 0.2); */
+    margin: 0.5rem;
+    text-align: center;
+   
+}
+.sale{
+    display: flex;
+    flex-direction: column;
+    
+}
+.sale img{
+    object-fit: cover;
+    width: 92%;
+    height: 450px !important;
+    margin:0 1rem ;
+}
+.item img{
+    width:50% ;
+    height: 60%;
+    height: auto;
+    object-fit: contain;
+}
+.phone{
+    object-fit: cover !important;
+    width:160px !important ;
+    height:140px !important ;
+}
+.right{
+    margin-right: 0.5rem;
+    margin-top: 1.8rem;
+}
+.singIn{
+    background-color: rgb(255, 255, 255);
+    height: 30%;
+    text-align: center;
+
+}
+.singIn button{
+    width: 80%;
+    padding: 0.5rem;
+    background-color: rgb(252, 233, 23);
+    border: none;
+    border-radius: 15px;
+    margin-top: 0.5rem;
+}
+.dummyImg{
+    object-fit: contain;
+    margin: 1rem;
+}
+.dummyImg img{
+    width: 100%;
+}
