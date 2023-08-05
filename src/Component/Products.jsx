@@ -47,7 +47,7 @@ function Products() {
             </p>
           </div>
         </div>
-        <button>view more products</button>
+        <Link to="/Products_Clothing">view more products</Link>
       </div>
 
       {/* Cases and covers for top smartphones*/}
@@ -93,7 +93,7 @@ function Products() {
             </p>
           </div>
         </div>
-        <button>view more products</button>
+        <Link to="/Products_Electronics">view more products</Link>
       </div>
 
       {/* Phone & smartphons */}
@@ -113,7 +113,7 @@ function Products() {
       <div className={styles.right}>
         <div className={styles.singIn}>
           <h1>Sign in for your best experience</h1>
-          <button>Sign In Securely</button>
+         <button> <Link to="/SignIn">Sign In Securely</Link></button>
         </div>
         <div className={styles.dummyImg}>
           <img

@@ -1,0 +1,35 @@
+.Card {
+  margin: 1rem;
+  width: 100%;
+  /* border: 5px solid red; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-align: center;
+  padding: 1rem;
+}
+.Card img {
+  object-fit: cover;
+  width: 50%;
+  height: 50%;
+}
+.Card p {
+  font-weight: 500;
+  text-align: left;
+}
+.Card svg {
+  color: rgb(253, 216, 6);
+  font-size: 25px;
+}
+.info {
+  color: rgb(107, 107, 157);
+  text-decoration: underline;
+}
+.price {
+  color: red;
+}
+.btn {
+  padding: 0.5rem;
+  width: 80%;
+  border-radius: 1rem;
+  background-color: goldenrod;
+  border: none;
+}

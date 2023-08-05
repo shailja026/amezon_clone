@@ -34,7 +34,7 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 .products h1{
     margin-left: 1rem;
 }
-.products button{
+.products a{
     border: none;
     text-align: left;
     margin: 1rem;
@@ -80,13 +80,18 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     text-align: center;
 
 }
-.singIn button{
+.singIn button {
     width: 80%;
     padding: 0.5rem;
     background-color: rgb(252, 233, 23);
     border: none;
     border-radius: 15px;
     margin-top: 0.5rem;
+}
+.singIn button a{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
 }
 .dummyImg{
     object-fit: contain;

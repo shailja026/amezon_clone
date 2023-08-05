@@ -1,0 +1,14 @@
+
+
+.ClothesData{
+    /* border: 10px solid red; */
+   display: grid;
+   grid-template-columns: auto auto auto auto ;
+   gap: 2rem;
+   width: 100%;
+}
+
+.cards{
+    /* border: 5px solid blueviolet; */
+    width: 100%;
+}

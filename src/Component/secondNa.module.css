@@ -1,56 +1,72 @@
-.SecondNav{
-   display: flex;
-   justify-content: space-between;
-   margin-top: 0;
+.SecondNav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
   align-items: center;
-   background-color: #232f3e;
-   color: white;
-   font-size: 1.3rem;
-   font-family: Arial,sans-serif;
-   width: 100%;
-   margin: 0 15px;
-   padding: 0 15px;
+  background-color: #232f3e;
+  color: white;
+  font-size: 1.3rem;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin: 0 0px;
+  padding: 0 15px;
 }
 
-.SecondNav p{
-    margin-top: 0.3rem;
-    padding: 0.5rem;
-    border-radius: 3px;
+.SecondNav p {
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  border-radius: 3px;
 }
-.SecondNav p:hover{
-    border: 2px solid white;
+.miniTV a {
+  text-decoration: none;
+  color: white;
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+.SecondNav p:hover {
+  border: 2px solid white;
+}
+.SecondNav img:hover {
+  border: 2px solid white;
+}
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar svg {
+  font-size: 2.2rem;
+  margin: 0.5rem;
+}
+.sidebar:hover {
+  border: 2px solid white;
+}
+.sidebar h5 {
+  margin-top: 0.2rem;
+}
 
+.hover_img div {
+  position: relative;
+  padding: 0.3rem;
+  border-radius: 3px;
 }
-.SecondNav img:hover{
-    border: 2px solid white;
+.hover_img div span {
+  position: absolute;
+  display: none;
+  z-index: 99;
 }
-.sidebar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hover_img img {
+  width: 550%;
+  height: 550%;
+  margin: 1rem;
+  border: 20px solid white;
+  border-radius: 10px;
+  z-index: 10;
 }
-.sidebar svg{
-   font-size: 2.2rem; 
-   margin: 0.5rem;
+.hover_img div:hover {
+  border: 2px solid white;
 }
-.sidebar:hover{
-    border: 2px solid white;
+.hover_img div:hover span {
+  display: block;
 }
-.sidebar h5{
-    margin-top: 0.2rem;
-}
-
-.hover_img div { position:relative; padding: 0.3rem; border-radius: 3px; }
-.hover_img div span { position:absolute; display:none; z-index:99; }
-.hover_img img{
-    width: 550%;
-    height: 550%;
-    margin: 1rem;
-    border: 20px solid white;
-    border-radius: 10px;
-    z-index: 10;
-}.hover_img div:hover{
-    border: 2px solid white;
-    
-}
-.hover_img div:hover span { display:block; }
