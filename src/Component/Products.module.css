@@ -72,13 +72,19 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .right{
     margin-right: 0.5rem;
-    margin-top: 1.8rem;
+    margin-top: 1rem;
 }
 .singIn{
     background-color: rgb(255, 255, 255);
     height: 30%;
     text-align: center;
+   
 
+}
+.singIn h1{
+    font-size: 2.5rem;
+    font-family:sans-serif;
+    padding: 0.7rem;
 }
 .singIn button {
     width: 80%;
@@ -87,6 +93,7 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     border: none;
     border-radius: 15px;
     margin-top: 0.5rem;
+    margin-bottom: 5rem !important;
 }
 .singIn button a{
     text-decoration: none;

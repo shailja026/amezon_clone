@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./Products.module.css";
 import { Link } from "react-router-dom";
 function Products() {
@@ -15,7 +15,7 @@ function Products() {
               alt=""
             />
             <p>
-              Men's sweatshirts &… <br />1 viewed
+              Men's sweatshirts &… <br />
             </p>
           </div>
           <div className={styles.item}>
@@ -24,7 +24,7 @@ function Products() {
               alt=""
             />
             <p>
-            Women Shirts <br />1 viewed
+            Women Shirts <br />
             </p>
           </div>
           <div className={styles.item}>
@@ -34,7 +34,7 @@ function Products() {
             />
             <p>
               Women Tops
-              <br />1 viewed
+              <br />
             </p>
           </div>
           <div className={styles.item}>
@@ -43,7 +43,7 @@ function Products() {
               alt=""
             />
             <p>
-              Gaming keyboards <br />1 viewed
+            Girl's casual Shirts 
             </p>
           </div>
         </div>

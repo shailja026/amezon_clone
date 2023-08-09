@@ -1,11 +1,16 @@
 import React from "react";
 import "./navbar.css"
+import { useNavigate } from "react-router-dom";
 import{ GoLocation} from "react-icons/go";
 import { BsCaretDown } from "react-icons/bs";
 import {ImCart} from "react-icons/im"
 import {FiSearch } from "react-icons/fi"
 import { Link } from "react-router-dom";
+import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
 function Navbar() {
+  const navigate = useNavigate()
   return (
     <div className="navbar">
       <div className="logo">
@@ -18,6 +23,7 @@ function Navbar() {
       </div>
       <div className="seachBar">
         <select name="all" id="category">
+         
           <option value="olvov">All</option>
           <option value="saab">Saab</option>
           <option value="mercedes">Mercedes</option>
@@ -42,6 +48,8 @@ function Navbar() {
           <option value="saab">Saab</option>
           <option value="mercedes">Mercedes</option>
           <option value="audi">Audi</option>
+          
+         
         </select>
 
         <input placeholder="Search amezon.in" />
@@ -60,7 +68,9 @@ function Navbar() {
               <p>Hello, sign in <br/>Account & Lists <BsCaretDown/></p>
             </div>
             <div className="return">Order and return <BsCaretDown/></div>
-            <div className="cart">
+            <div className="cart" onClick={() =>{
+               navigate("/Cart")
+            }}>
                 <p>0</p>
                 <ImCart/>
             </div>

@@ -1,0 +1,80 @@
+.SignInForm{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 25%;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 2rem;
+
+}
+.SignInForm img{
+    object-fit: contain;
+    margin-top: 1rem;
+    width: 50%;
+    height: 20%rem;
+}
+.SignInBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.SignInBox span{
+   /* text-decoration: underline;  */
+    color: rgb(90, 90, 253);
+}
+.SignInBox span:hover{
+    text-decoration: underline;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form label{
+    font-weight: 700;
+   
+}
+form input{
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+form button{
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: rgba(250, 195, 13, 0.948);
+    border: none;
+    margin: 0.8rem 0;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.way_to_signUp{
+    /* border: 10px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 80%;
+    margin: auto;
+}
+.way_to_signUp p{
+    text-align: center;
+    color: gray;
+    font-weight: 500;
+    
+}
+.way_to_signUp button a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+
+}
+.way_to_signUp button{
+    padding: 0.8rem;
+    border: none;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

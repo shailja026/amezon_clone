@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./clothsCard.module.css";
 import { BsFillStarFill } from "react-icons/bs";
+import { useStateValue } from "../contextApi";
+
+
 function ClothsCard({ el }) {
+
+    // const [dispatch] = useStateValue()
+
   const { Image, title, rating, price, discount, offer } = el;
   return (
     <div className={styles.Card}>
