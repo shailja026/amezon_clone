@@ -1,109 +1,99 @@
-
-.mainContainer{
-    display: flex;
-    margin: 1.5rem;
+.mainContainer {
+  display: flex;
+  margin: 1.5rem;
+  margin-top: 60px;
 }
-.products{
-/* border: 2px solid red; */
-z-index: 100;
-background-color: rgb(255, 255, 255);
-width: 30%;
-margin: 1rem;
-
-text-align: left;
-box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-
+.products {
+  z-index: 50;
+  background-color: rgb(255, 255, 255);
+  width: 30%;
+  margin: 0.5rem;
+  height: 450px;
+  text-align: left;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.products h1{
-    font-size: 2rem;
-  font-family:sans-serif;
-  font-weight: 700;
+.products h1 {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  font-weight: 600;
   margin-top: 1rem;
 }
-.card{
-    display: grid;
-    grid-template-columns: auto auto;
-    /* margin-left: rem; */
-    align-items: center;
-    
-    
+.card {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
 }
-/* .card img{
-  
-} */
-.products h1{
-    margin-left: 1rem;
-}
-.products a{
-    border: none;
-    text-align: left;
-    margin: 1rem;
-    color: red;
-    text-decoration: underline;
-    font-size: 1.2rem;
-}
-.item{
-    /* box-shadow: 1px 3px 2px rgb(0 0 0 / 0.2); */
-    margin: 0.5rem;
-    text-align: center;
-   
-}
-.sale{
-    display: flex;
-    flex-direction: column;
-    
-}
-.sale img{
-    object-fit: cover;
-    width: 92%;
-    height: 450px !important;
-    margin:0 1rem ;
-}
-.item img{
-    width:50% ;
-    height: 60%;
-    height: auto;
-    object-fit: contain;
-}
-.phone{
-    object-fit: cover !important;
-    width:160px !important ;
-    height:140px !important ;
-}
-.right{
-    margin-right: 0.5rem;
-    margin-top: 1rem;
-}
-.singIn{
-    background-color: rgb(255, 255, 255);
-    height: 30%;
-    text-align: center;
-   
 
+.products h1 {
+  margin-left: 1rem;
 }
-.singIn h1{
-    font-size: 2.5rem;
-    font-family:sans-serif;
-    padding: 0.7rem;
+.products a {
+  border: none;
+  text-align: left;
+  margin: 1rem;
+  color: rgb(60, 60, 253);
+  text-decoration: underline;
+  font-size: 1rem;
+}
+.item {
+  margin: 0.5rem;
+  text-align: center;
+}
+.sale {
+  display: flex;
+  flex-direction: column;
+}
+.sale img {
+  object-fit: cover;
+  width: 92%;
+  height: 300px !important;
+  margin: 0 1rem;
+}
+.item img {
+  width: 40%;
+  height: 50%;
+  height: auto;
+  object-fit: contain;
+}
+.phone {
+  object-fit: cover !important;
+  width: 120px !important ;
+  height: 90px !important ;
+}
+.right {
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+  width: 30%;
+  height: 100%;
+}
+.singIn {
+  background-color: rgb(255, 255, 255);
+  height: 20%;
+  text-align: center;
+}
+.singIn h1 {
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  padding: 0.7rem;
 }
 .singIn button {
-    width: 80%;
-    padding: 0.5rem;
-    background-color: rgb(252, 233, 23);
-    border: none;
-    border-radius: 15px;
-    margin-top: 0.5rem;
-    margin-bottom: 5rem !important;
+  width: 80%;
+  padding: 0.4rem;
+  background-color: rgb(252, 233, 23);
+  border: none;
+  border-radius: 15px;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem !important;
 }
-.singIn button a{
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
+.singIn button a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
 }
-.dummyImg{
-    object-fit: contain;
-    margin: 1rem;
+.dummyImg {
+  object-fit: contain;
+  margin: 1rem;
 }
-.dummyImg img{
-    width: 100%;
+.dummyImg img {
+  width: 100%;
 }

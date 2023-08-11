@@ -9,7 +9,7 @@ body{
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
-  /* border: 5px solid red; */
-  background-color: gray;
+
+background-color: rgb(248, 241, 241) !important;
   
 }

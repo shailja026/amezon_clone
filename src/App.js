@@ -5,6 +5,7 @@ import Clothes from "./Component/Clothes";
 import Electronics from "./Component/Electronics";
 import SignIn from "./pages/SingnIn/SignIn.jsx";
 import Cart from "./Component/Cart";
+
 import SignUp from "./pages/SignUp/SignUp";
 
 function App() {

@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import SecondNav from './SecondNav'
 import ClothsCard from './ClothsCard'
 import styles from "./clothes.module.css";
+
 function Electronics() {
   return (
     <div>

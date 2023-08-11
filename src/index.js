@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import { store } from "./redux/store";
+import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ContextApi } from "./contextApi";
@@ -10,10 +12,12 @@ import reducer, { initialState } from "./reducer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   
-    // <ContextApi initialState={initialState} reducer={reducer}>
+    <Provider store={store}>
+    <App/>
+    </Provider>
       
-    // </ContextApi>
-    <App />
+    
+   
  
 );
 

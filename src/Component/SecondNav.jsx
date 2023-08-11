@@ -12,8 +12,8 @@ function SecondNav() {
       </div>
       <p className={styles.miniTV}><Link to="https://www.amazon.in/minitv?ref_=nav_avod_desktop_topnav">Amazon miniTV</Link></p>
       <p>Sell</p>
-      <p>Best Sellers</p>
-      <p>Today's Deals</p>
+      {/* <p>Best Sellers</p>
+      <p>Today's Deals</p> */}
       <p>Mobiles</p>
       <p>New Relises</p>
       <p>Costomer Service</p>

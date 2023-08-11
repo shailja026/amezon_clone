@@ -5,6 +5,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   text-align: center;
   padding: 1rem;
+  background-color: white;
 }
 .Card img {
   object-fit: cover;
@@ -32,4 +33,7 @@
   border-radius: 1rem;
   background-color: goldenrod;
   border: none;
+}
+.rating{
+  display: flex;
 }
