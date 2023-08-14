@@ -41,11 +41,11 @@ function SignIn() {
         <form onSubmit={handleSubmit}>
           <label>Enter email</label>
 
-          <input value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
 
           <label>Password</label>
 
-<input value={password} onChange={(e) => setPassword(e.target.value)} type="password"/>
+<input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password"/>
  <p>{err}</p>
           <button type="submit">Continue</button>
         </form>

@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import { GoLocation } from "react-icons/go";
-import { BsCaretDown } from "react-icons/bs";
+
 import { ImCart } from "react-icons/im";
 import { FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { useSelector } from "react-redux";
+import {AiFillCaretDown} from "react-icons/ai"
+
 
 function Navbar() {
   const [name, setName] = useState("");
@@ -85,18 +87,18 @@ function Navbar() {
             alt=""
           />
           <span>
-            EN <BsCaretDown />{" "}
+            EN <AiFillCaretDown />{" "}
           </span>
         </div>
         <div className="SignIn">
           <p>
-            Hello, {name}
+           <span> Hello, {name}</span>
             <br />
-            Account & Lists <BsCaretDown />
+            Account & Lists <AiFillCaretDown />
           </p>
         </div>
         <div className="return">
-          Order and return <BsCaretDown />
+          Order and return <AiFillCaretDown />
         </div>
         <Link to="/Cart" className="cart">
           <div >

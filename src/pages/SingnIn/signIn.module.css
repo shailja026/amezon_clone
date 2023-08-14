@@ -10,6 +10,7 @@
     margin: auto;
     margin-top: 1rem;
     padding: 2rem;
+    background-color: white;
 
 }
 .SignInForm img{
@@ -38,18 +39,23 @@ form label{
     font-weight: 700;
    
 }
+.SignInBox h1{
+    font-size: 28px;
+    
+}
 form input{
-    padding: 0.5rem;
+    padding: 0.3rem;
     margin: 1rem 0;
 }
 form button{
-    padding: 0.5rem;
+    padding: 0.3rem;
     border-radius: 10px;
     background-color: rgba(250, 195, 13, 0.948);
     border: none;
-    margin: 0.8rem 0;
-    font-weight: 600;
+    margin: 0.5rem 1rem;
+    font-weight: 400;
     font-size: larger;
+    
 }
 
 .way_to_signUp{

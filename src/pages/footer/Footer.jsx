@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./footer.module.css";
 import { Link } from "react-router-dom";
+import {TfiWorld} from "react-icons/tfi"
 function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
@@ -61,7 +62,8 @@ function Footer() {
           src="https://th.bing.com/th/id/R.120901f790490f64604175c47ffac352?rik=IWA3HmJjAiLcUg&pid=ImgRaw&r=0"
           alt=""
         />
-        <button>English</button>
+        <button> <TfiWorld/>
+            English</button>
         <button>$ USD - U.S. Doollar</button>
         <button>united states</button>
       </div>

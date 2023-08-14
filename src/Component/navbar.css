@@ -8,7 +8,7 @@
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
-  z-index: 1000;
+  z-index: 500;
  
 }
 .logo {
@@ -103,6 +103,11 @@
 .SignIn p {
   margin-bottom:1rem;
   /* margin-top: 0; */
+}
+.SignIn span{
+  font-size: small;
+  position: absolute;
+  bottom: 32px;
 }
 .return {
   margin: 1rem;
