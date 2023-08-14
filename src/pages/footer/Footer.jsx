@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./footer.module.css";
 import { Link } from "react-router-dom";
-import {TfiWorld} from "react-icons/tfi"
+import { TfiWorld } from "react-icons/tfi";
 function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
@@ -62,8 +62,11 @@ function Footer() {
           src="https://th.bing.com/th/id/R.120901f790490f64604175c47ffac352?rik=IWA3HmJjAiLcUg&pid=ImgRaw&r=0"
           alt=""
         />
-        <button> <TfiWorld/>
-            English</button>
+        <button>
+          {" "}
+          <TfiWorld />
+          English
+        </button>
         <button>$ USD - U.S. Doollar</button>
         <button>united states</button>
       </div>
@@ -113,8 +116,6 @@ function Footer() {
           </li>
         </ul>
 
-       
-
         <ul>
           <li>Sell on Amazon Start a Selling Account</li>
           <li>Book Depository Books With Free Delivery Worldwide</li>
@@ -124,17 +125,17 @@ function Footer() {
         </ul>
       </div>
       <div className={styles.contact}>
-      <div>
-        <p>condition of use</p>
-        <p>privacy notice</p>
-        <p>your ads privacy choice</p>
+        <div>
+          <p>condition of use</p>
+          <p>privacy notice</p>
+          <p>your ads privacy choice</p>
+        </div>
+        <p>
+          © 1996-2023, Amazon.com, Inc. or its affiliates
+          <br />
+          by Shailja
+        </p>
       </div>
-      <p>© 1996-2023, Amazon.com, Inc. or its affiliates
-        <br/>
-        by Shailja
-      </p>
-      </div>
-      
     </footer>
   );
 }

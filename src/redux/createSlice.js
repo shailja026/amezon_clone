@@ -5,7 +5,7 @@ export const amazonSlice = createSlice({
   initialState: {
     card: [],
     amount: 0,
-    openDraw:false,
+   
   },
   reducers: {
     addToCart: (state, action) => {
@@ -30,13 +30,8 @@ export const amazonSlice = createSlice({
       console.log(total)
     },
 
-    drawrOperner : (state , action) => {
-      state.openDraw = true 
-    },
-    drawrCloser : (state , action) => {
-      state.openDraw = false
-    }
+   
   },
 });
-export const { addToCart, removeProducts, totalAmount , drawrOperner , drawrCloser} = amazonSlice.actions;
+export const { addToCart, removeProducts, totalAmount } = amazonSlice.actions;
 export default amazonSlice.reducer;

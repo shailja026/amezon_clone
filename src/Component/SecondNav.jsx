@@ -8,13 +8,15 @@ import { Drawer } from "@mui/material";
 import { FaUserCircle } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { auth } from "../firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { drawrOperner, drawrCloser } from "../redux/createSlice";
+
+
+
 function SecondNav() {
-  // const opener = useSelector((state) => state.amazon.openDraw);
-  const dispatch = useDispatch();
+ 
+ 
   const [isOpener, setIsOpener] = useState(false);
   const [name, setName] = useState("");
+  
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -27,6 +29,8 @@ function SecondNav() {
   const handleClick = () => {
     setIsOpener(!isOpener)
   };
+
+
   
   return (
     <div>

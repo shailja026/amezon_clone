@@ -2,30 +2,42 @@ import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import { GoLocation } from "react-icons/go";
-
+import axios from "axios";
 import { ImCart } from "react-icons/im";
 import { FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { useSelector } from "react-redux";
-import {AiFillCaretDown} from "react-icons/ai"
+import { AiFillCaretDown } from "react-icons/ai";
 
 
 function Navbar() {
+  const [location, setLocation] = useState({});
   const [name, setName] = useState("");
-  const navigate = useNavigate();
+  const [user, setUser] = useState(false);
   const arr = useSelector((state) => state.amazon.card);
+
   console.log(arr);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
         setName(user.displayName);
+        setUser(true);
       } else {
         setName("Guest");
       }
     });
   });
+  useEffect(() => {
+    getLocation();
+  }, []);
+
+  const getLocation = async () => {
+    const location = await axios.get("https://ipapi.co/json/");
+    console.log(location.data);
+    setLocation(location.data);
+  };
 
   return (
     <nav className="navbar">
@@ -39,11 +51,20 @@ function Navbar() {
         </Link>
       </div>
       <div className="location">
-        <GoLocation />
         <p>
-          <small>Hello,</small>
-          <br />
-          select your location
+          {user ? (
+            <>
+              <span className="name">deliver to {name}</span>
+              <span className="currentLocation">
+                <GoLocation />
+                <p>
+                  {location.city} {location.postal}
+                </p>
+              </span>
+            </>
+          ) : (
+            <span><GoLocation />select your location</span>
+          )}
         </p>
       </div>
       <div className="seachBar">
@@ -92,7 +113,7 @@ function Navbar() {
         </div>
         <div className="SignIn">
           <p>
-           <span> Hello, {name}</span>
+            <span> Hello, {name}</span>
             <br />
             Account & Lists <AiFillCaretDown />
           </p>
@@ -100,8 +121,9 @@ function Navbar() {
         <div className="return">
           Order and return <AiFillCaretDown />
         </div>
+
         <Link to="/Cart" className="cart">
-          <div >
+          <div>
             <p>{arr?.length}</p>
 
             <ImCart />
