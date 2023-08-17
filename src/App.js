@@ -7,6 +7,7 @@ import SignIn from "./pages/SingnIn/SignIn.jsx";
 import Cart from "./Component/Cart";
 
 import SignUp from "./pages/SignUp/SignUp";
+import Payment from "./Component/payment/Payment";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/payment" element={<Payment/>} />
         </Routes>
       </div>
     </BrowserRouter>

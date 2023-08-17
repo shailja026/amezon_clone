@@ -56,9 +56,11 @@ background-color: rgb(215, 236, 255);
 padding: 1.5rem;
 text-align: left;
 }
-.payment_box button{
+.payment_box a{
     background-color: goldenrod;
     padding: 0.5rem;
+    text-decoration: none;
+    color: black;
     width: 50%;
     border: none;
     margin: 1rem 0;

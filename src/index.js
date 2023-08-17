@@ -6,8 +6,10 @@ import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ContextApi } from "./contextApi";
-import reducer, { initialState } from "./reducer";
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+
+const stripePromise = loadStripe('pk_test_51NfJD9SAjWtNCaoQAbavu4SSRODcbhgBIH25oGj0JVbVfV51btHNxPQCw9Jkd3YOuUbolFloSMCedoCwNrq8dRF700BX6rxTNr')
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

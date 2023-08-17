@@ -16,18 +16,13 @@ export const amazonSlice = createSlice({
     },
 
     totalAmount: (state, action) => {
-      state.card.push(action.payload);
-      state = action.payload.card;
-      console.log("shailja", state);
-      console.log(action);
-
-      const total = state.reduce(
-        (accumulator, currentValue) => accumulator + currentValue.price,
-        0
-      );
-    //   return total;
-
-      console.log(total)
+     console.log("shailja gupta")
+     console.log(action.payload.card)
+     state = action.payload
+     console.log("hs" , state)
+     let total = state.reduce((acc , curr) => acc + curr.price , 0)
+     //console.log(total)
+    return total
     },
 
    

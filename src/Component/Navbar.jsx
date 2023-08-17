@@ -118,9 +118,9 @@ function Navbar() {
             Account & Lists <AiFillCaretDown />
           </p>
         </div>
-        <div className="return">
+        <Link to = "/SignIn" className="return">
           Order and return <AiFillCaretDown />
-        </div>
+        </Link>
 
         <Link to="/Cart" className="cart">
           <div>

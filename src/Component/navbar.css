@@ -28,7 +28,7 @@
 }
 .location {
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   margin-left: -2.5rem;
 }
 .location p{
@@ -131,6 +131,8 @@
 }
 .return {
   margin: 1rem;
+  color: white;
+  text-decoration: none;
 }
 .cart {
   /* border: 1px solid red; */

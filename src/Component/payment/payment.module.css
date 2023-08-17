@@ -1,0 +1,102 @@
+.navbar{
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.navbar img{
+    object-fit: contain;
+    width: 200px;
+    height: 60px;
+}
+.navbar svg{
+    font-size: 30px;
+}
+.whole_info{
+
+}
+.address{
+    /* border: 5px solid black; */
+    width: 650px;
+    height: 300px;
+    margin-left: 200px;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.address div{
+display: flex;
+justify-content: space-between;
+}
+.address div svg{
+    font-size: 25px;
+}
+.auto_fill{
+    display: flex;
+    flex-direction: column;
+}
+.user{
+    border: 1px solid yellowgreen;
+    background-color: antiquewhite;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 80px !important;
+}
+.user h6{
+    margin-top: -18px;
+}
+.user h6 svg{
+    font-size: medium;
+}
+.address button{
+    padding: 6px;
+    border-radius: 15px;
+    margin: 10px;
+    border: none;
+}
+.btn{
+    background-color: rgba(254, 254, 40, 0.721);
+}
+.payment_method{
+ width: 650px;
+ height: 300px;
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ margin-left: 200px;
+ margin-top: 20px;
+}
+
+.cards{
+    display: flex;
+    margin-left: 200px;
+    background-color: white;
+    margin-top: 20px;
+    width: 650px;
+}
+.cards img{
+  object-fit: contain;
+  width: 200px;
+  height: 200px;
+}
+.quantity{
+    padding: 0.5rem;
+}
+.quantity select{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.quantity button{
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 0.5rem;
+    border: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+

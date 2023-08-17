@@ -1,5 +1,6 @@
-import React , {useEffect , useState}from "react";
+import React , {useEffect,useState }from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 import SecondNav from "./SecondNav";
 import { useSelector, useDispatch } from "react-redux";
 import { removeProducts } from "../redux/createSlice";
@@ -7,16 +8,14 @@ import styles from "./cart.module.css";
 import { totalAmount } from "../redux/createSlice";
 import {FaRupeeSign} from "react-icons/fa"
 
-export const total = () =>{
-  
-}
+
 
 
 function Cart() {
-  // const [amount , setAmount] = useState(0)
+   const [amount , setAmount] = useState(0)
   const dispatch = useDispatch();
   const productCart = useSelector((state) => state.amazon);
-  const amount = useSelector((state) => state.amazon.amount)
+  
   console.log(amount)
   console.log(productCart);
   const removeFromCart = (el) => {
@@ -24,10 +23,11 @@ function Cart() {
     console.log(dispatch(removeProducts(el)));
    
   };
-  useEffect(() =>{
-    let a = dispatch(totalAmount(productCart))
-    console.log(a)
-  })
+  // useEffect(() => {
+  //  setAmount(dispatch(totalAmount(productCart.card)))
+  // },[])
+
+ 
 
   return (
     <div>
@@ -76,9 +76,9 @@ function Cart() {
 
         <div className={styles.payment_box}>
           <h5>
-            Subtotal({!productCart.card ? 0:productCart.card.length} items) : <h3>{amount}</h3>
+            Subtotal({!productCart.card ? 0:productCart.card.length} items) : <h3>{productCart.card.reduce((acc , curr) => acc + curr.price,0)}</h3>
           </h5>
-          <button>Proceed to Buy</button>
+          <Link to = "/payment">Proceed to Buy</Link>
         </div>
       </div>
     </div>
