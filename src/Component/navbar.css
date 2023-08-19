@@ -4,10 +4,10 @@
   display: flex;
   background-color: #263344;
   color: white;
-  height: 9vh;
+  height: 8vh;
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
-  align-items: center;
+  /* align-items: center; */
   z-index: 500;
   text-transform: capitalize;
  
@@ -15,21 +15,24 @@
 .logo {
   display: flex;
   height: 100%;
+  width: 150px;
   margin-left: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 17rem;
 }
 .logoImage {
   width: 100%;
   object-fit: contain;
   height: 100%;
-
-  margin-bottom: 2rem;
   border-radius: 15px;
 }
 .location {
   display: flex;
+  margin-bottom: 15rem;
+  margin-left: -8rem;
+}
+.loc{
+  font-size: small;
   margin-bottom: 1.5rem;
-  margin-left: -2.5rem;
 }
 .location p{
   display: flex;
@@ -53,13 +56,15 @@
 }
 .seachBar {
   display: flex;
-  width: 40%;
+  width: 50%;
 
   background-color: aliceblue;
-  height: 70%;
+  height: 80%;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 18rem;
+  margin-left: -3.5rem;
+ 
 }
 .seachBar select {
   height: 100%;
@@ -70,9 +75,11 @@
 .right {
   font-size: 15px;
   display: flex;
-  align-items: center;
-  margin-bottom: 3rem;
-  margin-right: 5rem;
+  /* align-items: center; */
+  margin-bottom: 18rem;
+  height: 100%;
+  margin-right: 8rem;
+  /* border: 2px solid red; */
 }
 
 .seachBar input {
@@ -108,26 +115,26 @@
 }
 
 .language img {
-  width: 25px;
+  width: 30px;
   height: 25px;
-  margin-right: 0.5rem;
+  margin-right: 1.5rem;
 }
 .SignIn {
   display: flex;
   flex-direction: column;
 }
 .SignIn p {
-  margin-bottom:1rem;
-  /* margin-top: 0; */
+  margin-bottom:1rem; 
+   margin-top: 0;
 }
 .SignIn span{
  
   color: rgb(176, 175, 175);
   font-size: small;
   margin-left: 0.2rem;
-  
-  position: absolute;
-  bottom: 2rem;
+  margin-bottom: -0.5rem !important;
+  /* position: absolute; */
+  /* bottom: 1.3rem; */
 }
 .return {
   margin: 1rem;
@@ -143,7 +150,7 @@
   right: 0.5rem;
   justify-content: center;
   align-items: center;
-  margin-right: 1.5rem;
+  margin-right: 2rem;
   
 }
 .cart p {

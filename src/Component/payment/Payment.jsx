@@ -4,16 +4,26 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { MdCancel } from "react-icons/md";
 import { GrRadialSelected } from "react-icons/gr";
 import styles from "./payment.module.css";
-import { useSelector } from "react-redux";
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "../axios";
 import { auth } from "../../firebase";
 import { FaRupeeSign } from "react-icons/fa";
-
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { empatyBag } from "../../redux/createSlice";
 function Payment() {
+  const dispatch = useDispatch();
+  const stripe = useStripe();
+  const element = useElements();
   const cart = useSelector((state) => state.amazon.card);
   const [address, setAddress] = useState({});
   const [name, setName] = useState("");
   const [user, setUser] = useState(false);
+  const [err, setErr] = useState(null);
+  const [disable, setDisable] = useState(true);
+  const [succeeded, setSucceeded] = useState(false);
+  const [processing, setProcessing] = useState("");
+  const [clientSecret, setClientSecret] = useState(true);
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -27,10 +37,44 @@ function Payment() {
   useEffect(() => {
     getLocation();
   }, []);
+
+  useEffect(() => {
+    const getClientSecret = async () => {
+      const response = await axios({
+        method: "POST",
+        url: `/payments/create?total=${cart?.reduce(
+          (acc, curr) => acc + curr.price,
+          0
+        )}`,
+      });
+      setClientSecret(response.data.clientSecret);
+    };
+    getClientSecret();
+  }, [cart]);
   const getLocation = async () => {
     const location = await axios.get("https://ipapi.co/json/");
     console.log(location.data);
     setAddress(location.data);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setProcessing(true);
+    const payload = await stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: element.getElement(CardElement),
+        },
+      })
+      .then(({ paymentIntent }) => {
+        setSucceeded(true);
+        setErr(null);
+        setProcessing(false);
+        dispatch(empatyBag(cart));
+      }).catch((err)=>console.log(err.message));
+  };
+  const handleChange = (e) => {
+    setDisable(e.empty);
+    setErr(e.err ? e.err.message : "");
   };
   return (
     <div>
@@ -68,15 +112,25 @@ function Payment() {
           <br />
           <button className={styles.btn}>Use this address</button>
         </div>
-        <div className={styles.payment_method}></div>
+        <div className={styles.payment_method}>
+          <form action="" onSubmit={handleSubmit}>
+            <CardElement onChange={handleChange} />
+            {/* <button>Pay</button> */}
+            <div className={styles.payment_amount}>
+              total : {cart?.reduce((acc, curr) => acc + curr.price, 0)}
+              <button disabled={processing || disable || succeeded}>
+                <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+              </button>
+              {err && <div>{err}</div>}
+            </div>
+          </form>
+        </div>
         <div className={styles.offers}></div>
         <div className={styles.delivery_items}>
           {cart?.map((el) => (
             <div className={styles.cards}>
-              
-                {" "}
-                <img src={el.Image} alt="" />
-         
+              {" "}
+              <img src={el.Image} alt="" />
               <div className={styles.Cart_details}>
                 <h6>{el.title}</h6>
                 <p>{el.discount}</p>
@@ -98,7 +152,7 @@ function Payment() {
                     <option value="saab">6</option>
                     <option value="mercedes">7</option>
                   </select>
-                <button>Delete</button>
+                  <button>Delete</button>
                 </div>
               </div>
             </div>

@@ -5,7 +5,6 @@ export const amazonSlice = createSlice({
   initialState: {
     card: [],
     amount: 0,
-   
   },
   reducers: {
     addToCart: (state, action) => {
@@ -16,17 +15,21 @@ export const amazonSlice = createSlice({
     },
 
     totalAmount: (state, action) => {
-     console.log("shailja gupta")
-     console.log(action.payload.card)
-     state = action.payload
-     console.log("hs" , state)
-     let total = state.reduce((acc , curr) => acc + curr.price , 0)
-     //console.log(total)
-    return total
+      console.log("shailja gupta");
+      console.log(action.payload.card);
+      state = action.payload;
+      console.log("hs", state);
+      let total = state.reduce((acc, curr) => acc + curr.price, 0);
+      //console.log(total)
+      return total;
     },
 
-   
+    empatyBag: (state, action) => {
+      state = [];
+      action.payload = [];
+    },
   },
 });
-export const { addToCart, removeProducts, totalAmount } = amazonSlice.actions;
+export const { addToCart, removeProducts, totalAmount, empatyBag } =
+  amazonSlice.actions;
 export default amazonSlice.reducer;

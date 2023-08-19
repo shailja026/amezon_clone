@@ -10,7 +10,6 @@ import { auth } from "../firebase";
 import { useSelector } from "react-redux";
 import { AiFillCaretDown } from "react-icons/ai";
 
-
 function Navbar() {
   const [location, setLocation] = useState({});
   const [name, setName] = useState("");
@@ -39,6 +38,14 @@ function Navbar() {
     setLocation(location.data);
   };
 
+  const signOut = () => {
+  auth.signOut().then(function() {
+    console.log('Signed Out');
+    setUser(false)
+  }, function(error) {
+    console.error('Sign Out Error', error);
+  });
+}
   return (
     <nav className="navbar">
       <div className="logo">
@@ -63,7 +70,10 @@ function Navbar() {
               </span>
             </>
           ) : (
-            <span><GoLocation />select your location</span>
+            <span className="loc">
+              <GoLocation />
+              select your location
+            </span>
           )}
         </p>
       </div>
@@ -115,12 +125,22 @@ function Navbar() {
           <p>
             <span> Hello, {name}</span>
             <br />
-            Account & Lists <AiFillCaretDown />
+            {user ? (
+              <p onClick={signOut} className="return">
+                SignOut
+              </p>
+            ) : (
+              <Link to="/SignIn" className="return">
+                {" "}
+                SignIn
+              </Link>
+            )}{" "}
+            <AiFillCaretDown />
           </p>
         </div>
-        <Link to = "/SignIn" className="return">
+        {/* <Link to = "/SignIn" className="return">
           Order and return <AiFillCaretDown />
-        </Link>
+        </Link> */}
 
         <Link to="/Cart" className="cart">
           <div>
