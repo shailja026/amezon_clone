@@ -1,16 +1,18 @@
 .Card {
-  margin: 1rem;
+  /* margin: 1rem; */
   width: 100%;
-  /* border: 5px solid red; */
+  
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   text-align: center;
+  height: 600px;
   padding: 1rem;
+ 
   background-color: white;
 }
 .Card img {
   object-fit: cover;
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 40%;
 }
 .Card p {
   font-weight: 500;
@@ -18,7 +20,7 @@
 }
 .Card svg {
   color: rgb(253, 216, 6);
-  font-size: 25px;
+  font-size: 20px;
 }
 .info {
   color: rgb(107, 107, 157);
