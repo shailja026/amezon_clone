@@ -78,7 +78,7 @@ function Cart() {
           <h5>
             Subtotal({!productCart.card ? 0:productCart.card.length} items) : <h3>{productCart.card.reduce((acc , curr) => acc + curr.price,0)}</h3>
           </h5>
-          <Link to = "/payment">Proceed to Buy</Link>
+          <Link to = "/payment" className={styles.link}>Proceed to Buy</Link>
         </div>
       </div>
     </div>

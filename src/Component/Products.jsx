@@ -99,8 +99,8 @@ function Products() {
       {/* Phone & smartphons */}
       <div className={styles.products}>
         <div className={styles.sale}>
-        <h1>Great Freedom Sale</h1>
-        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Events/img23/Aug23ART/GW/Shop-all-Deals_PC-CC_1X._SY304_CB599376706_.jpg" alt="" />
+        <h1>Bluetooth Calling Smartwatch starts at ₹1,999</h1>
+        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wearables/PC_CategoryCard_379X304_1._SY304_CB614835787_.jpg" alt="" />
         
         
         <Link to="/Produts">view all</Link>

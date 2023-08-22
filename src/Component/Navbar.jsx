@@ -71,7 +71,7 @@ function Navbar() {
             </>
           ) : (
             <span className="loc">
-              <GoLocation />
+              <GoLocation className="l"/>
               select your location
             </span>
           )}
@@ -122,22 +122,19 @@ function Navbar() {
           </span>
         </div>
         <div className="SignIn">
-          <p>
-            <span> Hello, {name}</span>
+          <span> Hello, {name}</span>
             <br />
             {user ? (
-              <p onClick={signOut} className="return">
-                SignOut
+              <p onClick={signOut} className="return2">
+                SignOut <AiFillCaretDown />
               </p>
             ) : (
               <Link to="/SignIn" className="return">
                 {" "}
-                SignIn
+                SignIn <AiFillCaretDown />
               </Link>
             )}{" "}
-            <AiFillCaretDown />
-          </p>
-        </div>
+          </div>
         {/* <Link to = "/SignIn" className="return">
           Order and return <AiFillCaretDown />
         </Link> */}

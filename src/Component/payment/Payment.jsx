@@ -5,12 +5,17 @@ import { MdCancel } from "react-icons/md";
 import { GrRadialSelected } from "react-icons/gr";
 import styles from "./payment.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import axios from "../axios";
+import instance from "../axios";
+import axios from "axios";
 import { auth } from "../../firebase";
 import { FaRupeeSign } from "react-icons/fa";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { empatyBag } from "../../redux/createSlice";
+import { useNavigate } from "react-router-dom";
+import { removeProducts } from "../../redux/createSlice";
+import { BsFillStarFill } from "react-icons/bs";
 function Payment() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const stripe = useStripe();
   const element = useElements();
@@ -23,7 +28,7 @@ function Payment() {
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
   const [clientSecret, setClientSecret] = useState(true);
-
+  // const Rating = Math.floor(cart.rating);
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -33,32 +38,20 @@ function Payment() {
         setName("Guest");
       }
     });
-  });
+  }, []);
   useEffect(() => {
     getLocation();
   }, []);
 
-  useEffect(() => {
-    const getClientSecret = async () => {
-      const response = await axios({
-        method: "POST",
-        url: `/payments/create?total=${cart?.reduce(
-          (acc, curr) => acc + curr.price,
-          0
-        )}`,
-      });
-      setClientSecret(response.data.clientSecret);
-    };
-    getClientSecret();
-  }, [cart]);
-  const getLocation = async () => {
-    const location = await axios.get("https://ipapi.co/json/");
-    console.log(location.data);
-    setAddress(location.data);
+  const removeFromCart = (el) => {
+    dispatch(removeProducts(el));
+    console.log(dispatch(removeProducts(el)));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
+    console.log(stripe);
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
@@ -66,13 +59,41 @@ function Payment() {
         },
       })
       .then(({ paymentIntent }) => {
+        console.log(paymentIntent, "intent");
         setSucceeded(true);
         setErr(null);
         setProcessing(false);
-        dispatch(empatyBag(cart));
-      }).catch((err)=>console.log(err.message));
+        dispatch(empatyBag());
+        navigate("/");
+      })
+      .catch((err) => console.log(err.message));
   };
+
+  useEffect(() => {
+    let amount = cart?.reduce((acc, curr) => acc + curr.price, 0) * 100;
+    const getClientSecret = async () => {
+      try {
+        const response = await instance({
+          method: "POST",
+          url: `/payments/create?total=${amount}`,
+        });
+        console.log("secretttttt:", response.data);
+        setClientSecret(response.data.clientSecret);
+      } catch (err) {
+        console.log("someErr", err);
+      }
+    };
+    getClientSecret();
+  }, [cart]);
+
+  const getLocation = async () => {
+    const location = await axios.get("https://ipapi.co/json/");
+    console.log(location.data);
+    setAddress(location.data);
+  };
+
   const handleChange = (e) => {
+    // setDisable(false)
     setDisable(e.empty);
     setErr(e.err ? e.err.message : "");
   };
@@ -86,77 +107,94 @@ function Payment() {
         <h3>Checkout</h3>
         <BsFillBagCheckFill />
       </nav>
-      <div className={styles.whole_info}>
-        <div className={styles.address}>
-          <div>
-            <h3>Select your delivery address</h3>
-            <MdCancel />
-          </div>
-          <div className={styles.auto_fill}>
-            {user ? (
-              <div className={styles.user}>
-                <h5>Your address</h5> <br />
-                <h6>
-                  {" "}
-                  <GrRadialSelected /> {name} , {address.city} {address.postal}{" "}
-                  {address.region} {address.country_name}
-                </h6>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-          <button>
-            <AiOutlinePlus /> Add new address
-          </button>{" "}
-          <br />
-          <button className={styles.btn}>Use this address</button>
-        </div>
+      <div>
         <div className={styles.payment_method}>
           <form action="" onSubmit={handleSubmit}>
             <CardElement onChange={handleChange} />
             {/* <button>Pay</button> */}
             <div className={styles.payment_amount}>
               total : {cart?.reduce((acc, curr) => acc + curr.price, 0)}
-              <button disabled={processing || disable || succeeded}>
+              <button
+                disabled={processing || disable || succeeded}
+                type="submit"
+              >
                 <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
               </button>
               {err && <div>{err}</div>}
             </div>
           </form>
         </div>
-        <div className={styles.offers}></div>
-        <div className={styles.delivery_items}>
-          {cart?.map((el) => (
-            <div className={styles.cards}>
-              {" "}
-              <img src={el.Image} alt="" />
-              <div className={styles.Cart_details}>
-                <h6>{el.title}</h6>
-                <p>{el.discount}</p>
-                <p>
-                  {" "}
-                  <FaRupeeSign />
-                  {el.price}
-                </p>
-                <p>
-                  <strong>Size</strong>:M
-                </p>
-                <div className={styles.quantity}>
-                  <select name="all" id="category">
-                    <option value="olvov">1</option>
-                    <option value="saab">2</option>
-                    <option value="mercedes">3</option>
-                    <option value="audi">4</option>
-                    <option value="volvo">5</option>
-                    <option value="saab">6</option>
-                    <option value="mercedes">7</option>
-                  </select>
-                  <button>Delete</button>
+        <div className={styles.whole_info}>
+          <div className={styles.address}>
+            <div>
+              <h3>Select your delivery address</h3>
+              <MdCancel />
+            </div>
+            <div className={styles.auto_fill}>
+              {user ? (
+                <div className={styles.user}>
+                  <h5>Your address</h5> <br />
+                  <h6>
+                    {" "}
+                    <GrRadialSelected /> {name} , {address.city}{" "}
+                    {address.postal} {address.region} {address.country_name}
+                  </h6>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+            <button>
+              <AiOutlinePlus /> Add new address
+            </button>{" "}
+            <br />
+            <button className={styles.btn}>Use this address</button>
+          </div>
+
+          <div className={styles.delivery_items}>
+            {cart?.map((el) => (
+              <div className={styles.cards}>
+                {" "}
+                <img src={el.Image} alt="" />
+                <div className={styles.Cart_details}>
+                  <h6>{el.title}</h6>
+                  <p>{el.discount}</p>
+                  <p>
+                    {" "}
+                    <FaRupeeSign />
+                    {el.price}
+                  </p>
+                  <div className={styles.rating}>
+                    {Array(Math.floor(el.rating))
+                      .fill()
+                      .map((_, i) => (
+                        <p className={styles.rating}>
+                          <BsFillStarFill />
+                        </p>
+                      ))}
+                  </div>
+                  <p>
+                    <strong>Size</strong>:M
+                  </p>
+                  <div className={styles.quantity}>
+                    <select name="all" id="category">
+                      <option value="olvov">1</option>
+                      <option value="saab">2</option>
+                      <option value="mercedes">3</option>
+                      <option value="audi">4</option>
+                      <option value="volvo">5</option>
+                      <option value="saab">6</option>
+                      <option value="mercedes">7</option>
+                    </select>
+                    <button>Delete</button>
+                  </div>
+                  <button onClick={() => removeFromCart(el)}>
+                    remove from cart
+                  </button>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

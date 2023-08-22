@@ -24,9 +24,8 @@ export const amazonSlice = createSlice({
       return total;
     },
 
-    empatyBag: (state, action) => {
-      state = [];
-      action.payload = [];
+    empatyBag: (state) => {
+      state.card = []
     },
   },
 });

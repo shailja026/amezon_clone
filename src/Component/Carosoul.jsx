@@ -18,14 +18,14 @@ function Carosoul() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/apparelGW/julyatf23/unrec/apay/KA_3000._CB600347170_.jpg"
+          src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/AmazonPay/Travel/MonsoonOffers/Non-CBCC_Monsoon-offer-PC_Hero_3000x1200._CB598617707_.jpg"
           alt="Second slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/IN/OHL/GW/August/PC_hero_1_2x._CB599488352_.jpg"
+          src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Home/AmazonTV/Rakshak/PC_Hero/3000x1200_V3._CB598224072_.jpg"
           alt="Third slide"
         />
       </Carousel.Item>
